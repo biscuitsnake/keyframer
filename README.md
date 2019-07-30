@@ -41,4 +41,11 @@ optional arguments:
                         Default: 3 by 3.  
 ```
 
+### TODO
 
+* Implement progress bars
+* Potentially use threading to speed up frame r/w, or other solutions
+* Improve key frame detection
+* Option to only get pdf (avoid storage issues when working with large files or batch processing)
+* End result formats other than pdf
+* Explore realtime scene change detection (ie directly grab key frames from a video, avoid writing all frames)
