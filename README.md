@@ -17,8 +17,8 @@ pip install -r "requirements.txt"
 `python keyframer.py INPUT [OPTIONS]`
 
 ```
-usage: keyframer.py [-h] [-o OUTPUT] [-f FORMAT] [-s SENSITIVITY] [-p PDF]
-                    [-g GRIDSIZE]
+usage: keyframer.py [-h] [-o OUTPUT] [-f FORMAT] [-s SENSITIVITY] [-p]
+                    [-g GRIDSIZE GRIDSIZE]
                     INPUT
 
 positional arguments:
@@ -34,18 +34,18 @@ optional arguments:
   -s SENSITIVITY, --sensitivity SENSITIVITY
                         Sensitivity of comparison [low|normal|high]. Defaults
                         to normal.
-  -p PDF, --pdf PDF     Generate pdf containing image grid of key frames.
-                        Defaults to True.
-  -g GRIDSIZE, --gridsize GRIDSIZE
+  -p, --purge           Remove frame and keyframe images to save space during
+                        large processes.
+  -g GRIDSIZE GRIDSIZE, --gridsize GRIDSIZE GRIDSIZE
                         Grid size of pdf image generated [width, length].
-                        Default: 3 by 3.  
+                        Default: 3 by 3. 
 ```
 
 ### TODO
-
-* Implement progress bars
-* Potentially use threading to speed up frame r/w, or other solutions
-* Improve key frame detection
-* Option to only get pdf (avoid storage issues when working with large files or batch processing)
-* End result formats other than pdf
-* Explore realtime scene change detection (ie directly grab key frames from a video, avoid writing all frames)
+ 
+- [ ] Implement progress bars   
+- [ ] Potentially use threading to speed up frame r/w, or other solutions  
+- [ ] Improve key frame detection  
+- [x] Option to only get pdf (avoid storage issues when working with large files or batch processing)  
+- [ ] End result formats other than pdf  
+- [ ] Explore realtime scene change detection (ie directly grab key frames from a video to avoid writing frames)  

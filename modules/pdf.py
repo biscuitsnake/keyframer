@@ -17,7 +17,7 @@ def create_image(w, l, input):
     return image
 
 
-def create_pdf(w, l, path):
+def create_pdf(w, l, path, name):
     images = []
 
     for file in os.listdir(os.path.join(path, "keyframes")):
@@ -28,5 +28,5 @@ def create_pdf(w, l, path):
     image_list = []
     for subset in images:
         image_list.append(create_image(w, l, subset))
-    filename = os.path.join(path, "test.pdf")
+    filename = os.path.join(path, name+".pdf")
     image_list[0].save(filename, "PDF", resolution=100.0, save_all=True, append_images=image_list[1:])
