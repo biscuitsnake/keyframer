@@ -4,7 +4,7 @@ import cv2
 
 def image_comparison(output_path, sensitivity):
     frames = []
-    s = {'low': 0.9, 'normal': 0.8, 'high': 0.6}
+    s = {'low': 0.6, 'normal': 0.8, 'high': 0.9}
 
     for file in os.listdir(os.path.join(output_path, "frames")):
         image = cv2.imread(os.path.join(output_path, "frames", str(file)), cv2.IMREAD_COLOR)

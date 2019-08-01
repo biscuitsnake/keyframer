@@ -1,12 +1,14 @@
 ## Keyframer
 
+A CLI tool to extract and present key frames from videos by sequentially comparing histograms.
+
 ### Dependencies
 
-* Python 3
+* Python 3  
 
 
-* [OpenCV](https://pypi.org/project/opencv-python/)
-* [Pillow](https://pypi.org/project/Pillow/)
+* [OpenCV](https://pypi.org/project/opencv-python/)  
+* [Pillow](https://pypi.org/project/Pillow/)  
 
 ### Setup
 
@@ -29,21 +31,21 @@ optional arguments:
   -h, --help            show this help message and exit
   -o OUTPUT, --output OUTPUT
                         Output directory.
-  -f FORMAT, --format FORMAT
-                        Format of image frames (affects speed of processing.
-  -s SENSITIVITY, --sensitivity SENSITIVITY
-                        Sensitivity of comparison [low|normal|high]. Defaults
-                        to normal.
+  -f {jpg,png,bmp}, --format {jpg,png,bmp}
+                        Format of image frames.
+  -s {low,normal,high}, --sensitivity {low,normal,high}
+                        Sensitivity of comparison (higher is stricter).
+                        Defaults to normal.
   -p, --purge           Remove frame and keyframe images to save space during
                         large processes.
   -g GRIDSIZE GRIDSIZE, --gridsize GRIDSIZE GRIDSIZE
-                        Grid size of pdf image generated [width, length].
-                        Default: 3 by 3. 
+                        Grid size of pdf image generated (WIDTH, HEIGHT).
+                        Defaults to 3 by 3.
 ```
 
 ### TODO
  
-- [ ] Implement progress bars   
+- [ ] Implement progress bars  
 - [ ] Potentially use threading to speed up frame r/w, or other solutions  
 - [ ] Improve key frame detection  
 - [x] Option to only get pdf (avoid storage issues when working with large files or batch processing)  
