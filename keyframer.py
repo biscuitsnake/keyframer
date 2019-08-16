@@ -4,7 +4,7 @@ import os
 import shutil
 
 from modules.frames import get_frames
-from modules.keyframes import image_comparison
+from modules.keyframes import image_comparison, by_interval
 from modules.pdf import create_pdf
 
 
@@ -15,6 +15,8 @@ def get_args():
                         help="Input file or directory containing videos to be processed.")
     parser.add_argument("-o", "--output",
                         help="Output directory.")
+    parser.add_argument("-i", "--interval", type=int,
+                        help="Get key frames every x seconds rather than through comparison.")
     parser.add_argument("-f", "--format", default="jpg", choices=['jpg', 'png', 'bmp'],
                         help="Format of image frames.")
     parser.add_argument("-s", "--sensitivity", default="normal", choices=['low', 'normal', 'high'],
@@ -60,7 +62,10 @@ def main():
 
         sys.stdout.write(" extracting keyframes...")
         sys.stdout.flush()
-        image_comparison(path, args.sensitivity)
+        if args.interval:
+            by_interval(path, args.interval)
+        else:
+            image_comparison(path, args.sensitivity)
 
         sys.stdout.write(" creating pdf...")
         sys.stdout.flush()

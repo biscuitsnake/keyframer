@@ -18,7 +18,6 @@ def get_frames(video, output_path, format):
 
         cv2.imwrite(os.path.join(output_path, "frames", str(time) + ".{}".format(format)), image)
 
-        # TODO: Implement custom framerate.
-        count += 1000  # 1 gets every frame (count can be removed), 1000 gets one frame per second
+        count += 1000
         video.set(cv2.CAP_PROP_POS_MSEC, count)
         success, image = video.read()

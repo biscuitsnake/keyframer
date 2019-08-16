@@ -19,8 +19,8 @@ pip install -r "requirements.txt"
 `python keyframer.py INPUT [OPTIONS]`
 
 ```
-usage: keyframer.py [-h] [-o OUTPUT] [-f FORMAT] [-s SENSITIVITY] [-p]
-                    [-g GRIDSIZE GRIDSIZE]
+usage: keyframer.py [-h] [-o OUTPUT] [-i INTERVAL] [-f {jpg,png,bmp}]
+                    [-s {low,normal,high}] [-p] [-g GRIDSIZE GRIDSIZE]
                     INPUT
 
 positional arguments:
@@ -31,6 +31,9 @@ optional arguments:
   -h, --help            show this help message and exit
   -o OUTPUT, --output OUTPUT
                         Output directory.
+  -i INTERVAL, --interval INTERVAL
+                        Get key frames every x seconds rather than through
+                        comparison.
   -f {jpg,png,bmp}, --format {jpg,png,bmp}
                         Format of image frames.
   -s {low,normal,high}, --sensitivity {low,normal,high}
@@ -48,6 +51,7 @@ optional arguments:
 - [ ] Implement progress bars  
 - [ ] Potentially use threading to speed up frame r/w, or other solutions  
 - [ ] Improve key frame detection  
+- [x] Option to get key frames every x seconds rather than by comparison  
 - [x] Option to only get pdf (avoid storage issues when working with large files or batch processing)  
 - [ ] End result formats other than pdf  
 - [ ] Explore realtime scene change detection (ie directly grab key frames from a video to avoid writing frames)  
