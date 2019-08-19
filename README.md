@@ -48,7 +48,6 @@ optional arguments:
 
 ### TODO
  
-- [ ] Implement progress bars  
 - [ ] Potentially use threading to speed up frame r/w, or other solutions  
 - [ ] Improve key frame detection  
 - [x] Option to get key frames every x seconds rather than by comparison  
